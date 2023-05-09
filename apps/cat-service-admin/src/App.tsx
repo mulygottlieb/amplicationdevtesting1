@@ -9,6 +9,14 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { PluralNameTestList } from "./pluralNameTest/PluralNameTestList";
+import { PluralNameTestCreate } from "./pluralNameTest/PluralNameTestCreate";
+import { PluralNameTestEdit } from "./pluralNameTest/PluralNameTestEdit";
+import { PluralNameTestShow } from "./pluralNameTest/PluralNameTestShow";
+import { TestDatumList } from "./testDatum/TestDatumList";
+import { TestDatumCreate } from "./testDatum/TestDatumCreate";
+import { TestDatumEdit } from "./testDatum/TestDatumEdit";
+import { TestDatumShow } from "./testDatum/TestDatumShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -41,6 +49,20 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="PluralNameTest"
+          list={PluralNameTestList}
+          edit={PluralNameTestEdit}
+          create={PluralNameTestCreate}
+          show={PluralNameTestShow}
+        />
+        <Resource
+          name="TestDatum"
+          list={TestDatumList}
+          edit={TestDatumEdit}
+          create={TestDatumCreate}
+          show={TestDatumShow}
         />
       </Admin>
     </div>
