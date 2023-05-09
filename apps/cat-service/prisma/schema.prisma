@@ -17,3 +17,10 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model PluralNameTest {
+  createdAt   DateTime @default(now())
+  id          String   @id @default(auto()) @map("_id") @mongo.ObjectId
+  myEventData String?
+  updatedAt   DateTime @updatedAt
+}
