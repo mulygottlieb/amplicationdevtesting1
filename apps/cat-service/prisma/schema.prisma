@@ -17,3 +17,28 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model PluralNameTest {
+  createdAt           DateTime               @default(now())
+  id                  String                 @id @default(auto()) @map("_id") @mongo.ObjectId
+  myEventData         String?
+  testData            TestDatum[]
+  transactionMetaData TransactionMetaDatum[]
+  updatedAt           DateTime               @updatedAt
+}
+
+model TestDatum {
+  createdAt        DateTime        @default(now())
+  id               String          @id @default(auto()) @map("_id") @mongo.ObjectId
+  pluralNameTest   PluralNameTest? @relation(fields: [pluralNameTestId], references: [id])
+  pluralNameTestId String?
+  updatedAt        DateTime        @updatedAt
+}
+
+model TransactionMetaDatum {
+  createdAt        DateTime        @default(now())
+  id               String          @id @default(auto()) @map("_id") @mongo.ObjectId
+  pluralNameTest   PluralNameTest? @relation(fields: [pluralNameTestId], references: [id])
+  pluralNameTestId String?
+  updatedAt        DateTime        @updatedAt
+}

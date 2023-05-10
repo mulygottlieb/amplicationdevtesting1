@@ -2,9 +2,13 @@ import { Module, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
+import { PluralNameTestModule } from "./pluralNameTest/pluralNameTest.module";
+import { TestDatumModule } from "./testDatum/testDatum.module";
+import { TransactionMetaDatumModule } from "./transactionMetaDatum/transactionMetaDatum.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
+import { KafkaModule } from "./kafka/kafka.module";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
@@ -19,6 +23,9 @@ import { AuthModule } from "./auth/auth.module";
     ACLModule,
     AuthModule,
     UserModule,
+    PluralNameTestModule,
+    TestDatumModule,
+    TransactionMetaDatumModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
