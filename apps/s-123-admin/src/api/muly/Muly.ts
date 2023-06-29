@@ -6,4 +6,5 @@ export type Muly = {
   updatedAt: Date;
   jfield: JsonValue;
   dsfs: string | null;
+  cvxcv: string | null;
 };

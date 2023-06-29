@@ -55,6 +55,7 @@ export class MulyControllerBase {
         updatedAt: true,
         jfield: true,
         dsfs: true,
+        cvxcv: true,
       },
     });
   }
@@ -81,6 +82,7 @@ export class MulyControllerBase {
         updatedAt: true,
         jfield: true,
         dsfs: true,
+        cvxcv: true,
       },
     });
   }
@@ -108,6 +110,7 @@ export class MulyControllerBase {
         updatedAt: true,
         jfield: true,
         dsfs: true,
+        cvxcv: true,
       },
     });
     if (result === null) {
@@ -144,6 +147,7 @@ export class MulyControllerBase {
           updatedAt: true,
           jfield: true,
           dsfs: true,
+          cvxcv: true,
         },
       });
     } catch (error) {
@@ -179,6 +183,7 @@ export class MulyControllerBase {
           updatedAt: true,
           jfield: true,
           dsfs: true,
+          cvxcv: true,
         },
       });
     } catch (error) {

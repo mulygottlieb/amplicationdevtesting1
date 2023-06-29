@@ -6,4 +6,5 @@ export type MulyWhereInput = {
   id?: StringFilter;
   jfield?: JsonFilter;
   dsfs?: StringNullableFilter;
+  cvxcv?: StringNullableFilter;
 };

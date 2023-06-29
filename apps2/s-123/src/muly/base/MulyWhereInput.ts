@@ -51,6 +51,17 @@ class MulyWhereInput {
     nullable: true,
   })
   dsfs?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  cvxcv?: StringNullableFilter;
 }
 
 export { MulyWhereInput as MulyWhereInput };
