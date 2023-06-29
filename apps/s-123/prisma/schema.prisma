@@ -23,4 +23,5 @@ model Muly {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   jfield    Json?
+  dsfs      String?
 }

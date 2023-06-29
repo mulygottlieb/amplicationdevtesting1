@@ -15,6 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
 import { JsonFilter } from "../../util/JsonFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class MulyWhereInput {
@@ -39,6 +40,17 @@ class MulyWhereInput {
     nullable: true,
   })
   jfield?: JsonFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  dsfs?: StringNullableFilter;
 }
 
 export { MulyWhereInput as MulyWhereInput };

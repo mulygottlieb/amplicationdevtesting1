@@ -52,6 +52,17 @@ class Muly {
     nullable: true,
   })
   jfield!: JsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  dsfs!: string | null;
 }
 
 export { Muly as Muly };

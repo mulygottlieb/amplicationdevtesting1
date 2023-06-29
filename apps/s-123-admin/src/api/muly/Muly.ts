@@ -5,4 +5,5 @@ export type Muly = {
   createdAt: Date;
   updatedAt: Date;
   jfield: JsonValue;
+  dsfs: string | null;
 };
