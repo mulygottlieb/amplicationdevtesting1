@@ -16,6 +16,7 @@ export const MulyList = (props: ListProps): React.ReactElement => {
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="jfield" source="jfield" />
+        <TextField label="dsfs" source="dsfs" />
       </Datagrid>
     </List>
   );

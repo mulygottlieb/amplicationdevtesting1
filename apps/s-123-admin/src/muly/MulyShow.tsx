@@ -15,6 +15,7 @@ export const MulyShow = (props: ShowProps): React.ReactElement => {
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="jfield" source="jfield" />
+        <TextField label="dsfs" source="dsfs" />
       </SimpleShowLayout>
     </Show>
   );

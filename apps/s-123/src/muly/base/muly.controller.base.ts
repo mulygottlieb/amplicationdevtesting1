@@ -54,6 +54,7 @@ export class MulyControllerBase {
         createdAt: true,
         updatedAt: true,
         jfield: true,
+        dsfs: true,
       },
     });
   }
@@ -79,6 +80,7 @@ export class MulyControllerBase {
         createdAt: true,
         updatedAt: true,
         jfield: true,
+        dsfs: true,
       },
     });
   }
@@ -105,6 +107,7 @@ export class MulyControllerBase {
         createdAt: true,
         updatedAt: true,
         jfield: true,
+        dsfs: true,
       },
     });
     if (result === null) {
@@ -140,6 +143,7 @@ export class MulyControllerBase {
           createdAt: true,
           updatedAt: true,
           jfield: true,
+          dsfs: true,
         },
       });
     } catch (error) {
@@ -174,6 +178,7 @@ export class MulyControllerBase {
           createdAt: true,
           updatedAt: true,
           jfield: true,
+          dsfs: true,
         },
       });
     } catch (error) {
