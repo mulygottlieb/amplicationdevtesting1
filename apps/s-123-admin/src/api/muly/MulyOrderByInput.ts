@@ -6,4 +6,5 @@ export type MulyOrderByInput = {
   updatedAt?: SortOrder;
   jfield?: SortOrder;
   dsfs?: SortOrder;
+  cvxcv?: SortOrder;
 };

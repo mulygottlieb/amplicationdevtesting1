@@ -73,6 +73,17 @@ class MulyOrderByInput {
     nullable: true,
   })
   dsfs?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @IsOptional()
+  @IsEnum(SortOrder)
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  cvxcv?: SortOrder;
 }
 
 export { MulyOrderByInput as MulyOrderByInput };

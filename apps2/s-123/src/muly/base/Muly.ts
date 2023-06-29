@@ -63,6 +63,17 @@ class Muly {
     nullable: true,
   })
   dsfs!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  cvxcv!: string | null;
 }
 
 export { Muly as Muly };

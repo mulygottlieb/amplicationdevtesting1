@@ -24,4 +24,5 @@ model Muly {
   updatedAt DateTime @updatedAt
   jfield    Json?
   dsfs      String?
+  cvxcv     String?
 }

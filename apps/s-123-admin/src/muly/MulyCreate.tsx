@@ -7,6 +7,7 @@ export const MulyCreate = (props: CreateProps): React.ReactElement => {
       <SimpleForm>
         <div />
         <TextInput label="dsfs" source="dsfs" />
+        <TextInput label="cvxcv" source="cvxcv" />
       </SimpleForm>
     </Create>
   );
