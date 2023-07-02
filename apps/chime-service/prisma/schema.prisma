@@ -1,0 +1,34 @@
+datasource mysql {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime  @default(now())
+  firstName String?
+  id        String    @id @default(cuid())
+  lastName  String?
+  moshes    Moshe[]
+  password  String
+  roles     Json
+  sessions  Session[]
+  updatedAt DateTime  @updatedAt
+  username  String    @unique
+}
+
+model Session {
+  id           String @id @default(cuid())
+  participants User[]
+}
+
+model Moshe {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  owner     User?    @relation(fields: [ownerId], references: [id])
+  ownerId   String?
+  updatedAt DateTime @updatedAt
+}
