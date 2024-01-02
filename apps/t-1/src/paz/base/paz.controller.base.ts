@@ -22,11 +22,10 @@ import { PazService } from "../paz.service";
 import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
 import { PazCreateInput } from "./PazCreateInput";
-import { PazWhereInput } from "./PazWhereInput";
-import { PazWhereUniqueInput } from "./PazWhereUniqueInput";
-import { PazFindManyArgs } from "./PazFindManyArgs";
-import { PazUpdateInput } from "./PazUpdateInput";
 import { Paz } from "./Paz";
+import { PazFindManyArgs } from "./PazFindManyArgs";
+import { PazWhereUniqueInput } from "./PazWhereUniqueInput";
+import { PazUpdateInput } from "./PazUpdateInput";
 
 @swagger.ApiBearerAuth()
 @common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
@@ -46,8 +45,8 @@ export class PazControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
-  async create(@common.Body() data: PazCreateInput): Promise<Paz> {
-    return await this.service.create({
+  async createPaz(@common.Body() data: PazCreateInput): Promise<Paz> {
+    return await this.service.createPaz({
       data: data,
       select: {
         id: true,
@@ -70,9 +69,9 @@ export class PazControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
-  async findMany(@common.Req() request: Request): Promise<Paz[]> {
+  async pazs(@common.Req() request: Request): Promise<Paz[]> {
     const args = plainToClass(PazFindManyArgs, request.query);
-    return this.service.findMany({
+    return this.service.pazs({
       ...args,
       select: {
         id: true,
@@ -95,10 +94,8 @@ export class PazControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
-  async findOne(
-    @common.Param() params: PazWhereUniqueInput
-  ): Promise<Paz | null> {
-    const result = await this.service.findOne({
+  async paz(@common.Param() params: PazWhereUniqueInput): Promise<Paz | null> {
+    const result = await this.service.paz({
       where: params,
       select: {
         id: true,
@@ -127,12 +124,12 @@ export class PazControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
-  async update(
+  async updatePaz(
     @common.Param() params: PazWhereUniqueInput,
     @common.Body() data: PazUpdateInput
   ): Promise<Paz | null> {
     try {
-      return await this.service.update({
+      return await this.service.updatePaz({
         where: params,
         data: data,
         select: {
@@ -163,11 +160,11 @@ export class PazControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
-  async delete(
+  async deletePaz(
     @common.Param() params: PazWhereUniqueInput
   ): Promise<Paz | null> {
     try {
-      return await this.service.delete({
+      return await this.service.deletePaz({
         where: params,
         select: {
           id: true,

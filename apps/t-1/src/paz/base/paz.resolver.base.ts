@@ -19,13 +19,13 @@ import { GqlDefaultAuthGuard } from "../../auth/gqlDefaultAuth.guard";
 import * as common from "@nestjs/common";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
 import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
-import { CreatePazArgs } from "./CreatePazArgs";
-import { UpdatePazArgs } from "./UpdatePazArgs";
-import { DeletePazArgs } from "./DeletePazArgs";
+import { Paz } from "./Paz";
 import { PazCountArgs } from "./PazCountArgs";
 import { PazFindManyArgs } from "./PazFindManyArgs";
 import { PazFindUniqueArgs } from "./PazFindUniqueArgs";
-import { Paz } from "./Paz";
+import { CreatePazArgs } from "./CreatePazArgs";
+import { UpdatePazArgs } from "./UpdatePazArgs";
+import { DeletePazArgs } from "./DeletePazArgs";
 import { PazService } from "../paz.service";
 @common.UseGuards(GqlDefaultAuthGuard, gqlACGuard.GqlACGuard)
 @graphql.Resolver(() => Paz)
@@ -58,7 +58,7 @@ export class PazResolverBase {
     possession: "any",
   })
   async pazs(@graphql.Args() args: PazFindManyArgs): Promise<Paz[]> {
-    return this.service.findMany(args);
+    return this.service.pazs(args);
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
@@ -69,7 +69,7 @@ export class PazResolverBase {
     possession: "own",
   })
   async paz(@graphql.Args() args: PazFindUniqueArgs): Promise<Paz | null> {
-    const result = await this.service.findOne(args);
+    const result = await this.service.paz(args);
     if (result === null) {
       return null;
     }
@@ -84,7 +84,7 @@ export class PazResolverBase {
     possession: "any",
   })
   async createPaz(@graphql.Args() args: CreatePazArgs): Promise<Paz> {
-    return await this.service.create({
+    return await this.service.createPaz({
       ...args,
       data: args.data,
     });
@@ -99,7 +99,7 @@ export class PazResolverBase {
   })
   async updatePaz(@graphql.Args() args: UpdatePazArgs): Promise<Paz | null> {
     try {
-      return await this.service.update({
+      return await this.service.updatePaz({
         ...args,
         data: args.data,
       });
@@ -121,7 +121,7 @@ export class PazResolverBase {
   })
   async deletePaz(@graphql.Args() args: DeletePazArgs): Promise<Paz | null> {
     try {
-      return await this.service.delete(args);
+      return await this.service.deletePaz(args);
     } catch (error) {
       if (isRecordNotFoundError(error)) {
         throw new GraphQLError(

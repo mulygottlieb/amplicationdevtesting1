@@ -13,6 +13,10 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { DfdfdsfList } from "./dfdfdsf/DfdfdsfList";
+import { DfdfdsfCreate } from "./dfdfdsf/DfdfdsfCreate";
+import { DfdfdsfEdit } from "./dfdfdsf/DfdfdsfEdit";
+import { DfdfdsfShow } from "./dfdfdsf/DfdfdsfShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -52,6 +56,13 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="Dfdfdsf"
+          list={DfdfdsfList}
+          edit={DfdfdsfEdit}
+          create={DfdfdsfCreate}
+          show={DfdfdsfShow}
         />
       </Admin>
     </div>

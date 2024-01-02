@@ -21,27 +21,27 @@ export class PazServiceBase {
     return this.prisma.paz.count(args);
   }
 
-  async findMany<T extends Prisma.PazFindManyArgs>(
+  async pazs<T extends Prisma.PazFindManyArgs>(
     args: Prisma.SelectSubset<T, Prisma.PazFindManyArgs>
   ): Promise<Paz[]> {
     return this.prisma.paz.findMany(args);
   }
-  async findOne<T extends Prisma.PazFindUniqueArgs>(
+  async paz<T extends Prisma.PazFindUniqueArgs>(
     args: Prisma.SelectSubset<T, Prisma.PazFindUniqueArgs>
   ): Promise<Paz | null> {
     return this.prisma.paz.findUnique(args);
   }
-  async create<T extends Prisma.PazCreateArgs>(
+  async createPaz<T extends Prisma.PazCreateArgs>(
     args: Prisma.SelectSubset<T, Prisma.PazCreateArgs>
   ): Promise<Paz> {
     return this.prisma.paz.create<T>(args);
   }
-  async update<T extends Prisma.PazUpdateArgs>(
+  async updatePaz<T extends Prisma.PazUpdateArgs>(
     args: Prisma.SelectSubset<T, Prisma.PazUpdateArgs>
   ): Promise<Paz> {
     return this.prisma.paz.update<T>(args);
   }
-  async delete<T extends Prisma.PazDeleteArgs>(
+  async deletePaz<T extends Prisma.PazDeleteArgs>(
     args: Prisma.SelectSubset<T, Prisma.PazDeleteArgs>
   ): Promise<Paz> {
     return this.prisma.paz.delete(args);
