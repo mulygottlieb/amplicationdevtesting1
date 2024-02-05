@@ -1,9 +1,11 @@
 import { Module } from "@nestjs/common";
-import { PazModule } from "./paz/paz.module";
 import { UserModule } from "./user/user.module";
+import { CustomerModule } from "./customer/customer.module";
+import { OrderModule } from "./order/order.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
+import { KafkaModule } from "./kafka/kafka.module";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { ConfigModule, ConfigService } from "@nestjs/config";
@@ -16,10 +18,12 @@ import { AuthModule } from "./auth/auth.module";
 @Module({
   controllers: [],
   imports: [
+    KafkaModule,
     ACLModule,
     AuthModule,
-    PazModule,
     UserModule,
+    CustomerModule,
+    OrderModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
