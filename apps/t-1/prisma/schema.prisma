@@ -7,13 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Paz {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String?
-}
-
 model User {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
@@ -25,7 +18,13 @@ model User {
   roles     Json
 }
 
-model Dfdfdsf {
+model Customer {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

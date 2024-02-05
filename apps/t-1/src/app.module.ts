@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
-import { PazModule } from "./paz/paz.module";
 import { UserModule } from "./user/user.module";
-import { DfdfdsfModule } from "./dfdfdsf/dfdfdsf.module";
+import { CustomerModule } from "./customer/customer.module";
+import { OrderModule } from "./order/order.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -18,12 +18,12 @@ import { AuthModule } from "./auth/auth.module";
 @Module({
   controllers: [],
   imports: [
+    KafkaModule,
     ACLModule,
     AuthModule,
-    KafkaModule,
-    PazModule,
     UserModule,
-    DfdfdsfModule,
+    CustomerModule,
+    OrderModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

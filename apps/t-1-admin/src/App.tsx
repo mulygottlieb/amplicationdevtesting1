@@ -5,18 +5,18 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
-import { PazList } from "./paz/PazList";
-import { PazCreate } from "./paz/PazCreate";
-import { PazEdit } from "./paz/PazEdit";
-import { PazShow } from "./paz/PazShow";
 import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
-import { DfdfdsfList } from "./dfdfdsf/DfdfdsfList";
-import { DfdfdsfCreate } from "./dfdfdsf/DfdfdsfCreate";
-import { DfdfdsfEdit } from "./dfdfdsf/DfdfdsfEdit";
-import { DfdfdsfShow } from "./dfdfdsf/DfdfdsfShow";
+import { CustomerList } from "./customer/CustomerList";
+import { CustomerCreate } from "./customer/CustomerCreate";
+import { CustomerEdit } from "./customer/CustomerEdit";
+import { CustomerShow } from "./customer/CustomerShow";
+import { OrderList } from "./order/OrderList";
+import { OrderCreate } from "./order/OrderCreate";
+import { OrderEdit } from "./order/OrderEdit";
+import { OrderShow } from "./order/OrderShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -44,13 +44,6 @@ const App = (): React.ReactElement => {
         loginPage={Login}
       >
         <Resource
-          name="Paz"
-          list={PazList}
-          edit={PazEdit}
-          create={PazCreate}
-          show={PazShow}
-        />
-        <Resource
           name="User"
           list={UserList}
           edit={UserEdit}
@@ -58,11 +51,18 @@ const App = (): React.ReactElement => {
           show={UserShow}
         />
         <Resource
-          name="Dfdfdsf"
-          list={DfdfdsfList}
-          edit={DfdfdsfEdit}
-          create={DfdfdsfCreate}
-          show={DfdfdsfShow}
+          name="Customer"
+          list={CustomerList}
+          edit={CustomerEdit}
+          create={CustomerCreate}
+          show={CustomerShow}
+        />
+        <Resource
+          name="Order"
+          list={OrderList}
+          edit={OrderEdit}
+          create={OrderCreate}
+          show={OrderShow}
         />
       </Admin>
     </div>
